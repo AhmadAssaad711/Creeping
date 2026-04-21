@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Phase 2: 500 veh/hr, conservative (40%) + neutral (60%). -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <vTypeDistribution id="phase2_dist">
+        <vType id="conservative_p2" probability="0.4"
+               accel="2.0" decel="4.5" emergencyDecel="6.0"
+               sigma="0.3" minGap="3.0" maxSpeed="13.89"
+               speedFactor="0.85" speedDev="0.05"
+               tau="1.8" impatience="0.0"
+               carFollowModel="IDM" color="0,0,200"/>
+        <vType id="neutral_p2" probability="0.6"
+               accel="2.5" decel="4.0" emergencyDecel="6.0"
+               sigma="0.4" minGap="2.5" maxSpeed="13.89"
+               speedFactor="1.0" speedDev="0.1"
+               tau="1.2" impatience="0.2"
+               carFollowModel="IDM" color="0,200,0"/>
+    </vTypeDistribution>
+
+    <flow id="f_0" begin="0" end="3600" perHour="500" from="E0"  to="E1"  type="phase2_dist"/>
+    <flow id="f_1" begin="0" end="3600" perHour="500" from="-E1" to="-E0" type="phase2_dist"/>
+</routes>

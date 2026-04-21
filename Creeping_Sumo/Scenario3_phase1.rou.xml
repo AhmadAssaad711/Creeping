@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Phase 1: 300 veh/hr, neutral drivers only. -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <vType id="neutral"
+           accel="2.5" decel="4.0" emergencyDecel="6.0"
+           sigma="0.4" minGap="2.5" maxSpeed="13.89"
+           speedFactor="1.0" speedDev="0.1"
+           tau="1.2" impatience="0.2"
+           carFollowModel="IDM" color="0,200,0"/>
+
+    <flow id="f_0" begin="0" end="3600" perHour="300" from="E0"  to="E1"  type="neutral"/>
+    <flow id="f_1" begin="0" end="3600" perHour="300" from="-E1" to="-E0" type="neutral"/>
+</routes>

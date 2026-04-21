@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <vTypeDistribution id="creep_dist">
+
+        <vType id="conservative_c"
+               probability="0.6"
+               accel="1.8" decel="5.0" emergencyDecel="7.0"
+               sigma="0.1" minGap="3.5" maxSpeed="13.89"
+               speedFactor="0.85" speedDev="0.02"
+               tau="2.0" impatience="0.0"
+               carFollowModel="IDM"
+               color="0,0,200"/>
+
+        <vType id="neutral_c"
+               probability="0.4"
+               accel="2.5" decel="4.0" emergencyDecel="6.0"
+               sigma="0.2" minGap="2.5" maxSpeed="13.89"
+               speedFactor="1.0" speedDev="0.05"
+               tau="1.2" impatience="0.1"
+               carFollowModel="IDM"
+               color="0,200,0"/>
+
+    </vTypeDistribution>
+
+    <flow id="f_0" begin="0" end="3600" perHour="1400"
+          from="E0" to="E1" type="creep_dist"/>
+    <flow id="f_1" begin="0" end="3600" perHour="1400"
+          from="-E1" to="-E0" type="creep_dist"/>
+
+</routes>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Strongly non-uniform gaps, speeds, and sizes for visible heterogeneity -->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- ══════════════════════════════════════════════
+         BLUE flow  (-E1 → -E0)
+         ══════════════════════════════════════════════ -->
+    <vTypeDistribution id="vtd_blue">
+
+        <!-- Crawling truck: very slow, very long, huge gap -->
+        <vType id="blue_truck"   color="blue"     probability="0.10"
+               vClass="truck"    length="12.0"    width="2.5"
+               maxSpeed="7.0"    speedFactor="0.70" speedDev="0.05"
+               minGap="5.0"      tau="2.8"
+               accel="0.8"       decel="2.5"      sigma="0.2"/>
+
+        <!-- Slow sedan -->
+        <vType id="blue_slow"    color="cyan"     probability="0.20"
+               vClass="passenger" length="5.0"
+               maxSpeed="9.0"    speedFactor="0.75" speedDev="0.08"
+               minGap="4.0"      tau="2.2"
+               accel="1.4"       decel="3.0"      sigma="0.4"/>
+
+        <!-- Average sedan -->
+        <vType id="blue_normal"  color="blue"     probability="0.35"
+               vClass="passenger" length="5.0"
+               maxSpeed="13.89"  speedFactor="1.00" speedDev="0.15"
+               minGap="2.5"      tau="1.4"
+               accel="2.0"       decel="4.0"      sigma="0.5"/>
+
+        <!-- Fast sports car: short gap, high speed -->
+        <vType id="blue_fast"    color="magenta"  probability="0.25"
+               vClass="passenger" length="4.2"
+               maxSpeed="19.0"   speedFactor="1.30" speedDev="0.12"
+               minGap="1.2"      tau="0.8"
+               accel="3.5"       decel="6.0"      sigma="0.6"/>
+
+        <!-- Motorcycle: tiny, fast, very tight gap -->
+        <vType id="blue_moto"    color="white"    probability="0.10"
+               vClass="motorcycle" length="2.2"   width="0.9"
+               maxSpeed="22.0"   speedFactor="1.40" speedDev="0.15"
+               minGap="0.8"      tau="0.6"
+               accel="4.0"       decel="7.0"      sigma="0.7"/>
+
+    </vTypeDistribution>
+
+    <!-- ══════════════════════════════════════════════
+         GREEN flow  (E0 → E1)
+         ══════════════════════════════════════════════ -->
+    <vTypeDistribution id="vtd_green">
+
+        <!-- Crawling truck -->
+        <vType id="green_truck"  color="green"    probability="0.10"
+               vClass="truck"    length="12.0"    width="2.5"
+               maxSpeed="7.0"    speedFactor="0.70" speedDev="0.05"
+               minGap="5.0"      tau="2.8"
+               accel="0.8"       decel="2.5"      sigma="0.2"/>
+
+        <!-- Slow sedan -->
+        <vType id="green_slow"   color="yellow"   probability="0.20"
+               vClass="passenger" length="5.0"
+               maxSpeed="9.0"    speedFactor="0.75" speedDev="0.08"
+               minGap="4.0"      tau="2.2"
+               accel="1.4"       decel="3.0"      sigma="0.4"/>
+
+        <!-- Average sedan -->
+        <vType id="green_normal" color="green"    probability="0.35"
+               vClass="passenger" length="5.0"
+               maxSpeed="13.89"  speedFactor="1.00" speedDev="0.15"
+               minGap="2.5"      tau="1.4"
+               accel="2.0"       decel="4.0"      sigma="0.5"/>
+
+        <!-- Fast sports car -->
+        <vType id="green_fast"   color="orange"   probability="0.25"
+               vClass="passenger" length="4.2"
+               maxSpeed="19.0"   speedFactor="1.30" speedDev="0.12"
+               minGap="1.2"      tau="0.8"
+               accel="3.5"       decel="6.0"      sigma="0.6"/>
+
+        <!-- Motorcycle -->
+        <vType id="green_moto"   color="white"    probability="0.10"
+               vClass="motorcycle" length="2.2"   width="0.9"
+               maxSpeed="22.0"   speedFactor="1.40" speedDev="0.15"
+               minGap="0.8"      tau="0.6"
+               accel="4.0"       decel="7.0"      sigma="0.7"/>
+
+    </vTypeDistribution>
+
+    <!-- departSpeed="random"    → each vehicle enters at its own random speed  -->
+    <!-- departPos="random_free" → breaks the uniform spacing at spawn           -->
+    <flow id="f_0" begin="0.00" end="3600.00" perHour="1800.00"
+          type="vtd_blue"  from="-E1" to="-E0"
+          departSpeed="random" departPos="random_free"/>
+
+    <flow id="f_1" begin="0.00" end="3600.00" perHour="1800.00"
+          type="vtd_green" from="E0"  to="E1"
+          departSpeed="random" departPos="random_free"/>
+
+</routes>

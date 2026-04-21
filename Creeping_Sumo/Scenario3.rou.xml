@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Scenario3.rou.xml  (Phase 3 / full training)
+    700 veh/hr per direction, three IDM driver archetypes.
+
+    conservative (30%): high tau, yields to creeping ego
+    neutral      (40%): yields depending on timing
+    aggressive   (30%): will NOT yield, ego must abort
+
+    Curriculum phases:
+        Phase 1 -> Scenario3_phase1.rou.xml  (300/hr, neutral only)
+        Phase 2 -> Scenario3_phase2.rou.xml  (500/hr, conservative+neutral)
+        Phase 3 -> this file               (700/hr, full mix)
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <vTypeDistribution id="crossing_dist">
+
+        <vType id="conservative"
+               probability="0.3"
+               accel="2.0" decel="4.5" emergencyDecel="6.0"
+               sigma="0.3" minGap="3.0" maxSpeed="13.89"
+               speedFactor="0.85" speedDev="0.05"
+               tau="1.8" impatience="0.0"
+               carFollowModel="IDM"
+               color="0,0,200"/>
+
+        <vType id="neutral"
+               probability="0.4"
+               accel="2.5" decel="4.0" emergencyDecel="6.0"
+               sigma="0.4" minGap="2.5" maxSpeed="13.89"
+               speedFactor="1.0" speedDev="0.1"
+               tau="1.2" impatience="0.2"
+               carFollowModel="IDM"
+               color="0,200,0"/>
+
+        <vType id="aggressive"
+               probability="0.3"
+               accel="3.5" decel="3.0" emergencyDecel="6.0"
+               sigma="0.5" minGap="1.5" maxSpeed="13.89"
+               speedFactor="1.15" speedDev="0.1"
+               tau="0.8" impatience="0.8"
+               carFollowModel="IDM"
+               color="200,0,0"/>
+
+    </vTypeDistribution>
+
+    <flow id="f_0" begin="0" end="3600" perHour="700" from="E0"  to="E1"  type="crossing_dist"/>
+    <flow id="f_1" begin="0" end="3600" perHour="700" from="-E1" to="-E0" type="crossing_dist"/>
+
+</routes>

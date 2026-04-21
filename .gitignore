@@ -1,0 +1,7 @@
+autoencoder/dataset
+draft.py
+simulation/env_3.py
+checkpoints/
+checkpoints_trial_1/
+ppo_checkpoints
+runs
