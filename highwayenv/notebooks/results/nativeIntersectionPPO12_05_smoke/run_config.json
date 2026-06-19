@@ -1,0 +1,15 @@
+{
+  "results_dir": "notebooks\\results\\nativeIntersectionPPO12_05_smoke",
+  "maneuvers": [
+    "straight"
+  ],
+  "initial_vehicles": 12,
+  "spawn_probability": 0.5,
+  "duration": 22,
+  "timesteps": 128,
+  "eval_episodes": 2,
+  "n_envs": 1,
+  "device": "cpu",
+  "seed": 9300,
+  "overwrite": true
+}

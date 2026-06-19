@@ -1,0 +1,17 @@
+{
+  "results_dir": "notebooks\\results\\nativeIntersectionPPO12_05_safeReg",
+  "maneuvers": [
+    "straight",
+    "left"
+  ],
+  "initial_vehicles": 12,
+  "spawn_probability": 0.5,
+  "duration": 22,
+  "timesteps": 40000,
+  "eval_episodes": 100,
+  "n_envs": 16,
+  "device": "cpu",
+  "seed": 9400,
+  "overwrite": true,
+  "regulation_conflict_prediction": "constant_velocity_safe_patch"
+}

@@ -1,0 +1,3 @@
+maneuver,episodes,forced_zero_collision_rate,forced_zero_collisions,initial_vehicle_count,spawn_probability,duration,negotiating_traffic
+left,100,0.01,1,6,0.35,22,False
+straight,100,0.01,1,6,0.35,22,False

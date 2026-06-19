@@ -1,0 +1,23 @@
+{
+  "results_dir": "notebooks\\results\\intersectionRouteAttentionCreeping",
+  "maneuvers": [
+    "straight"
+  ],
+  "initial_vehicles": 2,
+  "spawn_probability": 0.1,
+  "duration": 24,
+  "n_envs": 4,
+  "backend": "dummy",
+  "device": "cpu",
+  "eval_episodes": 100,
+  "reference_episodes": 20,
+  "standard_steps": 40000,
+  "creeping_steps": 60000,
+  "attention_steps": 40000,
+  "agents": [
+    "attention"
+  ],
+  "tag": "calibrated_conflict_ttc_40k",
+  "seed": 7100,
+  "overwrite": true
+}

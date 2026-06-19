@@ -1,0 +1,2 @@
+agent,episodes,success_rate,collision_rate,average_collisions,mean_time_to_collision_s,median_time_to_collision_s,mean_survival_time_s,mean_return,mean_creep_zone_speed,high_speed_zone_rate,creep_speed_rate,mean_abs_throttle,mean_abs_delta_throttle,mean_min_ttc
+PPO_standard_features_12k,60,0.7,0.3,0.3,4.711111111111111,4.9,6.849999999999999,50.85359516632705,10.52401582977539,0.9833333333333333,0.0,0.39562298866899026,0.027978145781165066,0.9073290002123919

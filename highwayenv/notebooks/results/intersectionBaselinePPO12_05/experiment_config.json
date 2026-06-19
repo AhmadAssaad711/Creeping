@@ -1,0 +1,24 @@
+{
+  "results_dir": "notebooks\\results\\intersectionBaselinePPO12_05",
+  "maneuvers": [
+    "straight",
+    "left"
+  ],
+  "initial_vehicles": 12,
+  "spawn_probability": 0.5,
+  "duration": 22,
+  "n_envs": 16,
+  "backend": "dummy",
+  "device": "cuda",
+  "eval_episodes": 100,
+  "reference_episodes": 20,
+  "standard_steps": 40000,
+  "creeping_steps": 60000,
+  "attention_steps": 90000,
+  "agents": [
+    "standard"
+  ],
+  "tag": "",
+  "seed": 9100,
+  "overwrite": true
+}

@@ -1,0 +1,21 @@
+{
+  "results_dir": "notebooks\\results\\nativeIntersectionPPO12_05_chunked",
+  "maneuvers": [
+    "straight",
+    "left"
+  ],
+  "initial_vehicles": 12,
+  "spawn_probability": 0.5,
+  "duration": 22,
+  "timesteps": 2048,
+  "eval_episodes": 100,
+  "n_envs": 8,
+  "device": "cpu",
+  "seed": 120000,
+  "road_class": "plain",
+  "safe_lane_lookup": true,
+  "resume_training": false,
+  "skip_train": true,
+  "skip_eval": false,
+  "overwrite": false
+}
