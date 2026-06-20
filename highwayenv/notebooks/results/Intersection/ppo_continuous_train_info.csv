@@ -1,0 +1,2 @@
+total_timesteps,n_envs,backend,device,n_steps_per_env,rollout_size,ppo_updates,batch_size,n_epochs,utd_ratio,wall_time_s
+100000,8,subproc,cuda,250,2000,50,2000,1,1,357.4589653015137
