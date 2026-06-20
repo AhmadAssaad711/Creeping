@@ -1,3 +1,2 @@
 agent,episodes,success_rate,collision_rate,timeout_rate,mean_return,mean_discounted_return,mean_steps,mean_survival_time_s,mean_min_ttc,mean_ego_speed,high_speed_rate,mean_abs_accel_action,brake_action_rate,throttle_action_rate
-random_continuous,5,0.6,0.4,0.0,24.639222698436296,11.923943158092353,33.0,6.6,0.19959069308084998,0.4798738974683168,0.0,0.4880423655265468,0.39519016216664593,0.35934334950852304
 ppo_continuous_eval,20,0.45,0.55,0.0,22.9,13.371364405823817,25.65,5.130000000000001,0.0989487997067395,0.6286042562489159,0.0,0.17397009434297858,0.0,0.13716562213261763
