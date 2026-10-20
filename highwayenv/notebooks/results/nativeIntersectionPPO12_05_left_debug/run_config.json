@@ -1,0 +1,15 @@
+{
+  "results_dir": "notebooks\\results\\nativeIntersectionPPO12_05_left_debug",
+  "maneuvers": [
+    "left"
+  ],
+  "initial_vehicles": 12,
+  "spawn_probability": 0.5,
+  "duration": 22,
+  "timesteps": 8192,
+  "eval_episodes": 10,
+  "n_envs": 4,
+  "device": "cpu",
+  "seed": 10300,
+  "overwrite": true
+}

@@ -1,0 +1,13 @@
+maneuver,seed,test_mode,action,steps_tested,crashed,arrived,survival_time_s,dist_center,ego_speed,conflict_ttc,negotiating_traffic
+straight,91006,discrete_action_0,0,1,True,False,0.2,48.81528091430664,8.42074074074074,6.294500218570091,False
+straight,91006,discrete_action_1,1,1,True,False,0.2,48.80097198486328,8.61432098765432,6.292449608801935,False
+straight,91006,discrete_action_2,2,1,True,False,0.2,48.80097198486328,8.61432098765432,6.292449608801935,False
+straight,91006,forced_zero_speed,0,1,True,False,0.2,50.28593444824219,0.0,inf,False
+straight,91061,discrete_action_0,0,3,True,False,0.6,35.82147216796875,7.624617494094382,4.705473229296107,False
+straight,91061,discrete_action_1,1,2,True,False,0.4,37.332725524902344,8.9179336934862,4.466249236265006,False
+straight,91061,discrete_action_2,2,2,True,False,0.4,37.332725524902344,8.9179336934862,4.466249236265006,False
+straight,91061,forced_zero_speed,0,3,False,False,0.6,41.169185638427734,0.0,inf,False
+left,92066,discrete_action_0,0,1,True,False,0.2,48.99945831298828,8.42074074074074,6.320896247852706,False
+left,92066,discrete_action_1,1,1,True,False,0.2,48.98514938354492,8.61432098765432,6.318844542098227,False
+left,92066,discrete_action_2,2,1,True,False,0.2,48.98514938354492,8.61432098765432,6.318844542098227,False
+left,92066,forced_zero_speed,0,3,False,False,0.6,50.521087646484375,0.0,inf,False

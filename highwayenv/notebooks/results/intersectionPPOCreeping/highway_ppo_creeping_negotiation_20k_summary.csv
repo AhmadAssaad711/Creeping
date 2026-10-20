@@ -1,0 +1,2 @@
+agent,episodes,success_rate,collision_rate,average_collisions,mean_time_to_collision_s,median_time_to_collision_s,mean_survival_time_s,mean_return,mean_creep_zone_speed,high_speed_zone_rate,creep_speed_rate,mean_abs_throttle,mean_abs_delta_throttle,mean_min_ttc
+PPO_creeping_negotiation_20k,60,0.6,0.31666666666666665,0.31666666666666665,5.1684210526315795,5.4,9.956666666666667,-90.72845854667705,7.576337655799718,0.9343714404221651,0.028782849363869094,0.2148791482215456,0.03256539831575346,0.8327503659778441

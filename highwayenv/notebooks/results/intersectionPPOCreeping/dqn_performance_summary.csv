@@ -1,0 +1,2 @@
+agent,episodes,success_rate,collision_rate,average_collisions,mean_time_to_collision_s,median_time_to_collision_s,mean_survival_time_s,timeout_rate,mean_return,mean_min_ttc
+DQN_rl_agents,50,0.0,0.58,0.58,6.751724137931036,6.4,9.516,0.42,8.254803242570414,

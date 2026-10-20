@@ -1,0 +1,3 @@
+maneuver,episodes,forced_zero_collision_rate,forced_zero_collisions,mean_initial_ego_speed,mean_vehicle_count_after_reset,initial_vehicle_count,spawn_probability,duration,forced_zero_steps,negotiating_traffic,surrounding_vehicle_control
+left,100,0.0,0,10.0,7.69,12,0.5,22,3,False,unmodified_highway_env_IDMVehicle
+straight,100,0.0,0,10.0,7.77,12,0.5,22,3,False,unmodified_highway_env_IDMVehicle
