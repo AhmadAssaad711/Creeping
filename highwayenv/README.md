@@ -1,9 +1,8 @@
 # HighwayEnv intersection policies
 
-Source and frozen reports live in `notebooks/`. From this directory, runners
-can retain their `notebooks/results` defaults; that results path links to the
-single historical store at the lab root. Old root notebook source paths are
-compatibility links to this component.
+Source and frozen reports live in `notebooks/`, and their results store is
+`notebooks/results/`. Run from this directory so runners' `notebooks/results`
+defaults and the reports' `REPO / 'notebooks/results/...'` paths resolve here.
 
 `run_route_attention_creeping_experiments.py` calls route-attention helpers to
 build environments, train/load PPO and evaluate. The benchmark runner launches
