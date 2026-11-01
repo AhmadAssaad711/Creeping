@@ -8,6 +8,8 @@ __pycache__/
 
 # Generated experiment artifacts: keep CSV/JSON/TXT summaries, not models or media
 results/**/*.zip
+# ...except the two deployed checkpoints that creeping.skill and its tests load
+!results/intersectionRouteAttentionCreeping/models/*_ppo_attention_bc_creeping_calibrated_v2.zip
 results/**/*.mp4
 results/**/*.gif
 *.log
