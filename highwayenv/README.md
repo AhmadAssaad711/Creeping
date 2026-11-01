@@ -12,22 +12,36 @@ baselines.
 | `notebooks/` | `intersectionPPOCreeping.ipynb`, the earlier creeping formulation notebook. |
 | `reports/` | Frozen report notebooks and `build_12_05_efficiency_report.py`, which regenerates the 12/0.5 report. |
 | `baselines/` | Plain accelerate-only PPO (`Intersection.ipynb`) and the `rl-agents` DQN notebook. |
-| `results/` | Trained models, metrics CSVs, logs and videos, including tracked historical artifacts. |
+| `results/` | Metrics CSVs, run configs and summaries. Trained models (`.zip`), videos, GIFs and logs are not tracked in this repository; they remain in the `agv_Unstructured_Labs` history under `research/creeping/results/`. |
 
 ## Running
 
-Use the lab's shared environment (see the root README). It installs this
-package, so `from creeping.route_attention import ...` works from any folder,
-and every runner's `--results-dir` defaults to the matching folder under
-`results/` regardless of the working directory. For example:
+The simulator and RL framework are submodules, `third_party/HighwayEnv/` and
+`third_party/rl-agents/` (the owner's forks, on their `agv-numpy2` branches).
+From the repository root, with Python 3.12:
 
 ```bash
-python research/creeping/runners/run_route_attention_creeping_experiments.py --help
+git submodule update --init third_party/HighwayEnv third_party/rl-agents
+py -3.12 -m venv .venv          # Linux/macOS: python3.12 -m venv .venv
+.venv\Scripts\activate          # Linux/macOS: source .venv/bin/activate
+python -m pip install -r requirements.txt
+```
+
+That installs this package, so `from creeping.route_attention import ...`
+works from any folder, and every runner's `--results-dir` defaults to the
+matching folder under `results/` regardless of the working directory. For
+example:
+
+```bash
+python highwayenv/runners/run_route_attention_creeping_experiments.py --help
+python -m pytest highwayenv/tests -q
 ```
 
 Report notebooks link their videos as `../results/...`, so open them from
-`reports/`. The DQN baseline also needs the local `infrastructure/rl-agents`
-framework and writes under its `scripts/out/` folder.
+`reports/`. The videos themselves are not tracked here, so those links only
+resolve after a re-render or with the videos copied in from
+`agv_Unstructured_Labs`. The DQN baseline also needs the `rl-agents`
+submodule and writes under its `scripts/out/` folder.
 
 ## Benchmark conventions
 
@@ -40,10 +54,17 @@ during a path check.
 
 ## Other creeping work
 
-SUMO and CARLA creeping stay in
-[`decision-making/negotiation-and-creeping`](../decision-making/negotiation-and-creeping/README.md):
-they use other simulators and action contracts. The orchestrator's rule-based
-creeping skill is `av-orchestrator/skills/creeping/`.
+The SUMO and CARLA creeping work is at the root of this repository
+([`Creeping_Sumo/`](../Creeping_Sumo/) and the CARLA stage beside it): it
+uses other simulators and action contracts. The orchestrator wrapper around
+`creeping.skill` (`cso/wrappers/learned_creeping.py`) and the rule-based
+creeping skill (`skills/creeping/`) live in `av-orchestrator/` inside
+[`agv_Unstructured_Labs`](https://github.com/AhmadAssaad711/agv_Unstructured_Labs),
+as do the lab-wide
+[script catalogue](https://github.com/AhmadAssaad711/agv_Unstructured_Labs/blob/master/docs/catalogs/intersections.md)
+and
+[workflow notes](https://github.com/AhmadAssaad711/agv_Unstructured_Labs/blob/master/docs/modules/intersections.md).
 
-[Individual scripts](../../docs/catalogs/intersections.md) ·
-[Workflow and caveats](../../docs/modules/intersections.md).
+This folder was split out of `agv_Unstructured_Labs` (`research/creeping/`,
+earlier `notebooks/`), with its history kept and generated artifacts
+removed.

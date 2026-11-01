@@ -7,7 +7,7 @@ name = "agv-creeping"
 version = "0.1.0"
 description = "HighwayEnv intersection creeping research: route-attention PPO, shielding and benchmarks"
 requires-python = ">=3.12"
-# Third-party versions are pinned once, in the lab's root requirements.txt.
+# Third-party versions are pinned once, in the repository's root requirements.txt.
 dependencies = []
 
 [tool.setuptools.packages.find]

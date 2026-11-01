@@ -1,0 +1,40 @@
+# Python environment for the HighwayEnv creeping work in highwayenv/ (Python 3.12).
+#
+#   git submodule update --init third_party/HighwayEnv third_party/rl-agents
+#   py -3.12 -m venv .venv          # Linux/macOS: python3.12 -m venv .venv
+#   .venv\Scripts\activate          # Linux/macOS: source .venv/bin/activate
+#   python -m pip install -r requirements.txt
+#
+# Versions match the agv_Unstructured_Labs shared environment. The SUMO and
+# CARLA stages at the repository root keep their own runtimes.
+
+# Core numerics and RL
+numpy==2.2.6
+scipy
+pandas
+gymnasium==1.2.2
+stable-baselines3[extra]==2.7.1
+torch==2.7.1
+tensorboard
+tensorboardX
+
+# Rendering, plotting and media
+matplotlib
+pygame
+pillow
+imageio
+moviepy
+
+# Notebooks, reports and tests
+notebook
+ipykernel
+pytest
+tqdm
+psutil
+docopt
+six
+
+# Local packages (editable, so source edits take effect immediately)
+-e ./third_party/HighwayEnv
+-e ./third_party/rl-agents
+-e ./highwayenv

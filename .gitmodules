@@ -1,0 +1,8 @@
+[submodule "rl-agents"]
+	path = third_party/rl-agents
+	url = https://github.com/AhmadAssaad711/rl-agents.git
+	branch = agv-numpy2
+[submodule "third_party/HighwayEnv"]
+	path = third_party/HighwayEnv
+	url = https://github.com/AhmadAssaad711/HighwayEnv.git
+	branch = agv-numpy2

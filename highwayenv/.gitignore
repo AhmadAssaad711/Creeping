@@ -1,0 +1,14 @@
+# Python caches and build products
+__pycache__/
+*.py[cod]
+*.pyc.*
+.pytest_cache/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Generated experiment artifacts: keep CSV/JSON/TXT summaries, not models or media
+results/**/*.zip
+results/**/*.mp4
+results/**/*.gif
+*.log
+events.out.tfevents.*
