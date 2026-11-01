@@ -19,12 +19,13 @@ LATENT_SPACE = 95
 
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+HERE = os.path.dirname(os.path.abspath(__file__))
 
 
 class VariationalAutoencoder(nn.Module):
     def __init__(self, latent_dims):
         super(VariationalAutoencoder, self).__init__()
-        self.model_file = os.path.join('autoencoder/model', 'var_autoencoder.pth')
+        self.model_file = os.path.join(HERE, "model", "var_autoencoder.pth")
         self.encoder = VariationalEncoder(latent_dims)
         self.decoder = Decoder(latent_dims)
 
@@ -39,14 +40,17 @@ class VariationalAutoencoder(nn.Module):
         self.decoder.save()
     
     def load(self):
-        self.load_state_dict(torch.load(self.model_file))
+        state = torch.load(self.model_file, map_location=device)
+        # Old checkpoints name the encoder variance head "sigma"; the encoder now calls it "logvar"
+        state = {k.replace("encoder.sigma.", "encoder.logvar.", 1): v for k, v in state.items()}
+        self.load_state_dict(state)
         self.encoder.load()
         self.decoder.load()
 
 
 def main():
 
-    data_dir = 'autoencoder/dataset/'
+    data_dir = os.path.join(HERE, "dataset", "")
 
     test_transforms = transforms.Compose([transforms.ToTensor()])
 
@@ -71,7 +75,7 @@ def main():
             img = transform(x_hat)
 
             image_filename = str(count) +'.png'
-            img.save('autoencoder/reconstructed/'+image_filename)
+            img.save(os.path.join(HERE, "reconstructed", image_filename))
             count +=1
 
 

@@ -4,12 +4,13 @@ import torch.nn as nn
 
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+HERE = os.path.dirname(os.path.abspath(__file__))
 
 class Decoder(nn.Module):
     
     def __init__(self, latent_dims):
         super().__init__()
-        self.model_file = os.path.join('autoencoder/model', 'decoder_model.pth')
+        self.model_file = os.path.join(HERE, "model", "decoder_model.pth")
         self.decoder_linear = nn.Sequential(
             nn.Linear(latent_dims, 1024),
             nn.LeakyReLU(),
@@ -40,4 +41,4 @@ class Decoder(nn.Module):
         torch.save(self.state_dict(), self.model_file)
 
     def load(self):
-        self.load_state_dict(torch.load(self.model_file))
+        self.load_state_dict(torch.load(self.model_file, map_location=device))
